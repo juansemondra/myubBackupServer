@@ -10,9 +10,9 @@ public class HealthCheckApp {
 
         while (true) {
             try {
-                healthCheckRequester.send("ping".getBytes(ZMQ.CHARSET));
+                healthCheckRequester.send("PING".getBytes(ZMQ.CHARSET));
                 String respuesta = healthCheckRequester.recvStr(0);
-                if (!respuesta.equals("pong")) {
+                if (!respuesta.equals("PONG")) {
                     System.err.println("Servidor principal no responde. Cambiando a servidor de respaldo.");
                     break;
                 }
