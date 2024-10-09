@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BackupServerApp {
-    private static final int PUERTO_POSICIONES = 5561; // Puerto del backup para recibir posiciones
-    private static final int PUERTO_SOLICITUDES = 5558; // Puerto del backup para recibir solicitudes
-    private static final int PUERTO_HEALTH_CHECK = 5570; // Puerto de health check para recibir señales del servidor principal
+    private static final int PUERTO_POSICIONES = 5561;
+    private static final int PUERTO_SOLICITUDES = 5558;
+    private static final int PUERTO_HEALTH_CHECK = 5570;
 
     private Map<Integer, int[]> taxisPosiciones;
     private Map<Integer, Boolean> taxisOcupados;
     private Map<Integer, Integer> taxisServicios;
     private ZMQ.Context context;
-    private boolean isPrimaryServerAlive = true; // Para monitorear el servidor primario
+    private boolean isPrimaryServerAlive = true;
 
     public BackupServerApp() {
         taxisPosiciones = new HashMap<>();
